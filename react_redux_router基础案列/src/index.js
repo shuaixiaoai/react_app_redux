@@ -16,8 +16,10 @@ import { BrowserRouter,
 // import App from './App';
 import Auth from './Auth.js';
 import Dashboard from './Dashboard.js';
+import './config';
 
 import './index.css';
+import 'antd-mobile/dist/antd-mobile.css';
 // import { counter } from './index.redux'              // 使用reducer合并之后删除
 import reducers from './reducer.js'; 
 

@@ -45,3 +45,15 @@
 解决为： 点击左下角设置按钮 --> 打开设置面板 --> 在用户设置或者工作区设置面板下加如下代码：  `"javascript.implicitProjectConfig.experimentalDecorators": true`
 
 ## 关于typeError: Cannot read property 'state' of undefined 此报错为devtools版本不一致而报错。 注意安装版本
+
+## Express + mongodb开发后台接口， 使用nodejs的mongoose模块链接和操作mongodb
+1、安装express   `npm install express --save`
+2、监听路由和响应内容， 使用nodemon自动重启 `npm install nodemon -g`
+3、安装mongodb，    配置文件mongodb --config /usr/local/etc/mongod.conf
+4、安装mongoose  `npm install mongoose --save` 基本操作： find, findOne, update, Remove
+
+## 前后端联调   
+安装axios   npm install axios --save
+
+### 开发模式
+1、基于cookie用户验证， express依赖cookie-parse， 需要暗转 `npm install cookie-parse --save`, 登录服务端返回， 请求头带上cookie
