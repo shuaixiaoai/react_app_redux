@@ -31,3 +31,7 @@ html,body {
     background: #1c83c6;
     border: 1px solid #1c83c6;
 }
+.error-msg {
+    color: red;
+    font-size: 12px;
+}

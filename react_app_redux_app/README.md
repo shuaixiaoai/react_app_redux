@@ -57,3 +57,5 @@
 
 ### 开发模式
 1、基于cookie用户验证， express依赖cookie-parse， 需要暗转 `npm install cookie-parse --save`, 登录服务端返回， 请求头带上cookie
+2、路由组件才有操作路由的方法， 非路由组件可以加载react-router4的withRouter方法, 然后使用@withRouter包裹组件
+3、使用md5加密， 使用第三方库 utility `npm install utility --save` 再加盐。。。
