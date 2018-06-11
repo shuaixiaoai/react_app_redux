@@ -39,6 +39,7 @@ ReactDom.render(
                 {/* Switch只渲染命中的第一个Route路由组件 */}
                 <div>
                     <AuthRoute></AuthRoute>
+
                     <Route path='/bossinfo' component={BossInfo}></Route>
                     <Route path='/genuis' component={GenuisInfo}></Route>
                     <Route path='/login' component={Login}></Route>
