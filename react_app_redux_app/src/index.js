@@ -24,7 +24,7 @@ import Login from './container/login/login'
 import Register from './container/register/register';
 import AuthRoute from './component/authroute/authroute';
 import BossInfo from './container/bossinfo/bossinfo';
-import GenuisInfo from './container/genuis/genuis';
+import GeniusInfo from './container/genius/genius';
 
 const reduxDevtools = window.devToolsExtension ? window.devToolsExtension() : f => f;
 const store = createStore(reducers, compose(
@@ -41,7 +41,7 @@ ReactDom.render(
                     <AuthRoute></AuthRoute>
 
                     <Route path='/bossinfo' component={BossInfo}></Route>
-                    <Route path='/genuis' component={GenuisInfo}></Route>
+                    <Route path='/geniusinfo' component={GeniusInfo}></Route>
                     <Route path='/login' component={Login}></Route>
                     <Route path='/register' component={Register}></Route>
                 </div>

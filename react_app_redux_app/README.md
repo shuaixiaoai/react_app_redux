@@ -5,6 +5,16 @@
     ]
 `
 
+### 配置vscode jsx高亮以及快捷补全
+```
+{
+    "javascript.implicitProjectConfig.experimentalDecorators": true,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    }
+}
+```
+
 ## redux使用
 1、首先通过reducer新建store， 随时通过store.getState获取状态
 2、需要状态变更， store.dispatch(action)来修改状态
@@ -59,3 +69,10 @@
 1、基于cookie用户验证， express依赖cookie-parse， 需要暗转 `npm install cookie-parse --save`, 登录服务端返回， 请求头带上cookie
 2、路由组件才有操作路由的方法， 非路由组件可以加载react-router4的withRouter方法, 然后使用@withRouter包裹组件
 3、使用md5加密， 使用第三方库 utility `npm install utility --save` 再加盐。。。
+
+
+
+### 页面开发
+1、进入某个组件前， 可以校验某字段，作为路由跳转的选择，例如： `{ redirect && redirect !== path ? <Redirect to={this.props.redirectTo}></Redirect> : null}`
+2、类型检测 `PropTypes` 检测父组件传入参数检测 react16之后需要单独安装 `npm intsall prop-types --save`
+3、父子组件通信： 

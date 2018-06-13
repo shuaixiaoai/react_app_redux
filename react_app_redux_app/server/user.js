@@ -12,6 +12,21 @@ Router.get('/list', (req, res) => {
         return res.json(doc);
     })
 })
+Router.post('/update', (req, res) => {
+    const userid = req.cookies.userid;
+    if (!userid) return res.json.dumps({ code: 1, msg: '用户身份失效！'});
+    
+    // 查询数据库
+    const body = req.body;
+    User.findByIdAndUpdate(userid, body, (err, doc) => {
+        const data = Object.assign({}, {                                // 合并数据
+            user: doc.user,
+            type: doc.type
+        }, body);
+        return res.json({ code: 0, data, msg: '保存成功！'});
+    })
+
+})
 Router.post('/login', (req, res) => {
     const { user, pwd } = req.body;
     User.findOne({ user, pwd: md5Pwd(pwd)}, _filter, (err, doc) => {

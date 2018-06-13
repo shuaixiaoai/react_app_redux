@@ -11,13 +11,11 @@ import { update } from '../../redux/user.redux';
     state => state.user,
     { update }
 )
-class BossInfo extends React.Component {
+class GeniusInfo extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
             position: '',
-            company: '',
-            money: '',
             desc: ''
         }
     }
@@ -32,7 +30,7 @@ class BossInfo extends React.Component {
         return (
             <div>
                 { redirect && redirect !== path ? <Redirect to={this.props.redirectTo}></Redirect> : null}
-                <NavBar mode="dark">BOSS完善信息页</NavBar>
+                <NavBar mode="dark">大佬完善信息页</NavBar>
                 <AvatarSelector 
                     selectAvatar={(imgname) => {
                         this.setState({
@@ -40,13 +38,11 @@ class BossInfo extends React.Component {
                         })
                     }}
                 ></AvatarSelector>
-                <InputItem onChange={(v) => this.handleChange('position', v)}>招聘职位：</InputItem>
-                <InputItem onChange={(v) => this.handleChange('company', v)}>公司名称：</InputItem>
-                <InputItem onChange={(v) => this.handleChange('money', v)}>职位薪资：</InputItem>
+                <InputItem onChange={(v) => this.handleChange('position', v)}>求职岗位：</InputItem>
                 <TextareaItem 
                     rows={3}
                     autoHeight
-                    title="职位要求："
+                    title="个人简介："
                     onChange={(v) => this.handleChange('desc', v)}>
                 </TextareaItem>
                 <WhiteSpace />
@@ -60,4 +56,4 @@ class BossInfo extends React.Component {
     }
 }
 
-export default BossInfo;
+export default GeniusInfo;
