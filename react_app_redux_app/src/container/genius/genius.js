@@ -38,19 +38,21 @@ class GeniusInfo extends React.Component {
                         })
                     }}
                 ></AvatarSelector>
-                <InputItem onChange={(v) => this.handleChange('position', v)}>求职岗位：</InputItem>
-                <TextareaItem 
-                    rows={3}
-                    autoHeight
-                    title="个人简介："
-                    onChange={(v) => this.handleChange('desc', v)}>
-                </TextareaItem>
-                <WhiteSpace />
-                <WingBlank>
-                    <Button 
-                    onClick={() => this.props.update(this.state)}
-                    type="primary">保存</Button>
-                </WingBlank>
+                <div>
+                    <InputItem onChange={(v) => this.handleChange('position', v)}>求职岗位：</InputItem>
+                    <TextareaItem 
+                        rows={3}
+                        autoHeight
+                        title="个人简介："
+                        onChange={(v) => this.handleChange('desc', v)}>
+                    </TextareaItem>
+                    <WhiteSpace />
+                    <WingBlank>
+                        <Button 
+                        onClick={() => this.props.update(this.state)}
+                        type="primary">保存</Button>
+                    </WingBlank>
+                </div>
             </div>
         )
     }

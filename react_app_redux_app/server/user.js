@@ -6,10 +6,12 @@ const User = model.getModel('user');
 const _filter = { pwd: 0, '_v': 0 };
 
 Router.get('/list', (req, res) => {
+    const { type } = req.query;
     // User.remove({}, function (e, d) {});      // 清楚数据库数据
-    User.find({}, (err, doc) => {
+    User.find({ type }, (err, doc) => {
         if (err) return console.log(err);
-        return res.json(doc);
+        console.log(doc)
+        return res.json({ code: 0, data: doc });
     })
 })
 Router.post('/update', (req, res) => {
@@ -23,6 +25,7 @@ Router.post('/update', (req, res) => {
             user: doc.user,
             type: doc.type
         }, body);
+        console.log(data)
         return res.json({ code: 0, data, msg: '保存成功！'});
     })
 

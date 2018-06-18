@@ -6,6 +6,7 @@ const ERROR_MSG = 'ERROR_MSG';
 // const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 const AUTH_SUCCESS = 'AUTH_SUCCESS';                                            // 登录注册成功
 const LOAD_DATA = 'LOAD_DATA';
+const LOGOUT = 'LOGOUT';
 
 const initState = {
     redirectTo: '',
@@ -27,6 +28,8 @@ export function user(state=initState, action) {
         //     return { ...state, mag: '', redirectTo: getRedirectPath(action.payload), isAuth: true, ...action.payload };
         case LOAD_DATA:
             return { ...state, ...action.payload };
+        case LOGOUT:
+            return { ...initState, redirectTo: '/login' };
         default: 
             return state;
     }
@@ -100,4 +103,6 @@ export function loadData(userinfo) {
     console.log(userinfo, '加载的信息');
     return { type: LOAD_DATA, payload: userinfo };
 }
-
+export function logoutSubmit() {
+    return { type: LOGOUT };
+}

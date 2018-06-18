@@ -13,14 +13,15 @@ const models = {
         'pwd': { type: String, require: true },
         'type': { type: String, require: true },
         // 头像
-        'avata': { type: String },
+        'avatar': { type: String },
         // 个人简介
         'desc': { type: String },
         // 职位名
         'title': { type: String },
         // 如果是boss， 还有两个字段
         'company': { type: String },
-        'money': { type: String }
+        'money': { type: String },
+        'position': { type: String }
     },
     chat: {}
 }

@@ -76,3 +76,6 @@
 1、进入某个组件前， 可以校验某字段，作为路由跳转的选择，例如： `{ redirect && redirect !== path ? <Redirect to={this.props.redirectTo}></Redirect> : null}`
 2、类型检测 `PropTypes` 检测父组件传入参数检测 react16之后需要单独安装 `npm intsall prop-types --save`
 3、父子组件通信： 
+4、使用插件browser-cookies操作浏览器cookie
+5、修复报错提示`Warning: You tried to redirect to the same route you're currently on: "/login"`
+  在login作路由跳转的判断， 加上条件 `&&this.props.redirectTo!=='/login'`

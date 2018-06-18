@@ -35,3 +35,29 @@ html,body {
     color: red;
     font-size: 12px;
 }
+
+.am-tab-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.fixed-header .am-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.page-content {
+    padding: 45px 5px;
+}
+.card-list {
+    margin-top: 16px;
+}
+.am-navbar{
+    height: 45px;
+}
+ 
+.am-tab-bar {
+    height: 50px !important;
+}

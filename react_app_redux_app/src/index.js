@@ -25,6 +25,7 @@ import Register from './container/register/register';
 import AuthRoute from './component/authroute/authroute';
 import BossInfo from './container/bossinfo/bossinfo';
 import GeniusInfo from './container/genius/genius';
+import Dashboard from './container/dsahboard/dashboard';
 
 const reduxDevtools = window.devToolsExtension ? window.devToolsExtension() : f => f;
 const store = createStore(reducers, compose(
@@ -35,18 +36,18 @@ const store = createStore(reducers, compose(
 ReactDom.render(
     (<Provider store={store}>
         <BrowserRouter>
-            {/* <Switch> */}
-                {/* Switch只渲染命中的第一个Route路由组件 */}
-                <div>
-                    <AuthRoute></AuthRoute>
-
+            <div>
+                <AuthRoute></AuthRoute>
+                <Switch>
+                    {/* Switch只渲染命中的第一个Route路由组件 */}
                     <Route path='/bossinfo' component={BossInfo}></Route>
                     <Route path='/geniusinfo' component={GeniusInfo}></Route>
                     <Route path='/login' component={Login}></Route>
                     <Route path='/register' component={Register}></Route>
-                </div>
-                {/* 如果没有命中， 使用Redirect默认跳转， 一般是404页面 */}
-            {/* </Switch> */}
+                    <Route component={Dashboard}></Route>   
+                </Switch>   
+            </div>
+            {/* 如果没有命中， 使用Redirect默认跳转， 一般是404页面 */}
         </BrowserRouter>
     </Provider>),
     document.getElementById('root')
